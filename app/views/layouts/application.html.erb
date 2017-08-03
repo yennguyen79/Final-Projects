@@ -8,7 +8,18 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+<body>
+  <div>
+    <nav class="navbar navbar-light bg-faded">
+      <form class="form-inline">
+        <button class="btn btn-outline-success" type="button">
+        <a class="nav-lin" href="<%=root_path %>">La <span class=" sr_only"> Fiesta</pan>
+        </button>
+      </form>
+    </nav>
+  </div>  
+  <div class="container">
     <%= yield %>
-  </body>
+  </div>
+</body>
 </html>
