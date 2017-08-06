@@ -8,7 +8,7 @@
   * [x] Breakfast
   * [x] Lunch
   * [x] Dinner
-  * [x] Drinks
+  * [x] Dessert
 * [ ] User should see at least 5 food items in each section.
 * [ ] Each food item should have the following fields:
   * Name (Canh Chua)
