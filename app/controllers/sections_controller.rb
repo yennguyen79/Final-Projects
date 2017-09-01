@@ -1,7 +1,7 @@
 class SectionsController < ApplicationController
-def 
-  unless params[:section]
-      redirect_to sections_path(section: Sections.first.name)
+  def index
+    unless params[:section]
+      redirect_to sections_path(section: Section.first.name)
       return 
     end 
 

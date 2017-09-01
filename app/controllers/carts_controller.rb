@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
 def add
-    cart = get_cart
+   cart = get_cart
     line_item = cart.line_items.create! line_item_params
     if cart.save
       flash[:success] = "You added"

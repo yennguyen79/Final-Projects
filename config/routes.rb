@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :sections do
     resources :food_items
-    end
+  end
+
+  resources :food_items, only: [:destroy]
+
   get "contact_us" => "home#contact_us"
 post  "carts/add"
   #get "menu"=> "sections#index"

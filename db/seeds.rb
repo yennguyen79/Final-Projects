@@ -15,3 +15,11 @@ puts "You #{section.name}!"
       
 end
 end
+sections = Section.all
+20.times do
+  FoodItem.create(
+    name: Faker::Food.dish,
+    section: sections.sample,
+    price: rand(10..200) * 1000 # price is between 10,000 VND and 200,000 VND
+  )
+end

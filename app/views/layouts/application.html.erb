@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MexicanFood</title>
+    <title>Yen Restaurant</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,13 +12,15 @@
   <div>
     <nav class="navbar navbar-light bg-faded">
       <form class="form-inline">
-        <button class="btn btn-outline-success" type="button">
-          <a class="nav-lin" href="<%=root_path %>">La <span class=" sr_only"> Fiesta</span>
 
-        </button>
         <button class="btn btn-outline-success" type="button">
-           <a class="nav-lin" href="/">Cart <span class="sr_only"> <%= @cart.item_count %></pan>
+          <a class="nav-lin" href="<%=root_path %>"><span class=" sr_only"> Home </span>
         </button>
+
+        <button class="btn btn-outline-success" type="button">
+           <a class="nav-lin" >Cart <span class="sr_only"> <%= @cart.item_count %></pan>
+        </button>
+
       </form>
     </nav>
   </div>  

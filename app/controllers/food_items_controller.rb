@@ -5,6 +5,7 @@ class FoodItemsController < ApplicationController
     @section = Section.find(params[:section_id].to_i) 
     @food_items = @section.food_items
   end
+  
   def show
   end
   
@@ -40,18 +41,17 @@ def update
       end
     end
   end
+
   def destroy
     @food_item.destroy
-    respond_to do |format|
-      format.html { redirect_to food_items_url, notice: 'Food item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_back fallback_location: root_path
   end
 
+  
  private
  
  def set_items
-      @section = Section.find(params[:section_id].to_i)
+      # @section = Section.find(params[:section_id].to_i)
       @food_item = FoodItem.find(params[:id].to_i)
     end
   def food_item_params
