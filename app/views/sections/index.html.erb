@@ -1,19 +1,16 @@
-<h1>Menu</h1>
-
-<ul class="nav nav-pills">
-  <% @sections.each do |section| %>
-    <li class="nav-item">
-      <%= link_to(section.name, sections_path(section: section.name), class: "nav-link #{'active'if params[:section] == section.name}") %>
+<div class="tabs is-large">
+    <li class="is-active"> <% @sections.each do |section| %>
+      <%= link_to(section.name, sections_path(section: section.name), class: " #{'active'if params[:section] == section.name}") %>
     </li>  
   <% end %>
-</ul>
+</div>
   
 <% if @food_items.present? %>
   <br></br>
     <% @food_items.each do |food_item| %>
-      <figure class="image is-128x128">
-          <img  src="<%= food_item.fake_image_url %>">     
-        </figure>
+      <div class="image is-64x64">
+        <img  src="<%= food_item.fake_image_url %>">     
+      </div>
   <div class="card-block">
     <h4 class="card-title">
       <%= food_item.name %>:<br> <%= number_to_currency(food_item.price) %>
@@ -22,13 +19,13 @@
         
     <%= form_for LineItem.new(food_item: food_item), url: carts_add_path do |f| %>
       <%= f.hidden_field :food_item_id %>
-      <%= f.number_field :quantity, class: "form-control" %>
-      <%= f.submit "Order", class: "btn btn-primary" ,style:"margin: 10px" %>
+      <%= f.number_field :quantity, class: "input" %>
+      <%= f.submit "Order", class: "button is-primary" ,style:"margin: 10px" %>
       
   <% end %>
 
     <%= form_tag food_item_path(food_item.id), method: :delete do %>
-    <%= submit_tag "Delete", class: " hidden btn btn-primary", style:"margin: 10px" %>
+    <%= submit_tag "Delete", class: " hidden button is-primary", style:"margin: 10px" %>
 
   <% end %>
     </div>
