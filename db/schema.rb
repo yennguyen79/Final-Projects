@@ -43,7 +43,4 @@ ActiveRecord::Schema.define(version: 20170831082255) do
     t.string "name"
   end
 
-  add_foreign_key "line_items", "carts"
-  add_foreign_key "line_items", "food_items"
-  
 end
