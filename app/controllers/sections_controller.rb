@@ -8,12 +8,24 @@ class SectionsController < ApplicationController
     @sections = Section.all
     section = Section.find_by(name: params[:section])
     @food_items = section.food_items
+    get_cart
+
+    end
+
  
+  
+  def set_cart
+    cart = Cart.create
+    session[:cart_id] = @cart.id
+  
   end
 
-  def show
-    @sections = Section.all
-    @section = Section.find(params[:id])
-    @food_items = @section.food_items
-  end 
-end
+  def get_cart 
+    if session[:cart_id]
+      @cart = Cart.find session[:cart_id]
+    else 
+      set_cart
+    end
+    end
+  
+end  

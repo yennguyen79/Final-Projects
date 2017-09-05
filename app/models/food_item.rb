@@ -4,7 +4,8 @@ class FoodItem < ApplicationRecord
   has_many :line_items, dependent: :destroy
 
   def fake_image_url
-   "http://www.phobinhminh.ca/wp-content/uploads/2017/03/afcce6edab8f598e4fe81426c128df4c.jpg" 
+    
+    "http://www.veganfoodquest.com/wp-content/uploads/2014/09/IMG_2672-1024x783.jpg" 
   end 
 
 end

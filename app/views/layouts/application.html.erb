@@ -23,10 +23,11 @@
     
   <div class="tabs is-centered">
     <ul>
-      <li><a><%= link_to "Home", root_path %></a></li>
       <li><a><%= link_to "Menu", sections_path %></a></li>
       <li><a><%= link_to "Contact Us", contact_us_path %></a></li>
-      <li><a>Cart<%= @cart.item_count %><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+      <li><a><%= link_to "About VegansFood", root_path %></a></li>
+      
+      <li><a><%= link_to "Cart",carts_add_path %> <%= @cart.item_count %></a></li>
     </ul>
   </div>
 </section>
@@ -37,7 +38,7 @@
     </div>
   </div>  
   <div class="container">
-    <%= yield %>
+    <%= yield %> 
   </div>
 </body>
 </html>

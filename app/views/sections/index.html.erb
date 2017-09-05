@@ -8,7 +8,7 @@
 <% if @food_items.present? %>
   <br></br>
     <% @food_items.each do |food_item| %>
-      <div class="image is-64x64">
+      <div class="image">
         <img  src="<%= food_item.fake_image_url %>">     
       </div>
   <div class="card-block">
@@ -20,16 +20,15 @@
     <%= form_for LineItem.new(food_item: food_item), url: carts_add_path do |f| %>
       <%= f.hidden_field :food_item_id %>
       <%= f.number_field :quantity, class: "input" %>
-      <%= f.submit "Order", class: "button is-primary" ,style:"margin: 10px" %>
+      <%= f.submit "Order", class: "button is-primary"  %>
       
   <% end %>
-
     <%= form_tag food_item_path(food_item.id), method: :delete do %>
     <%= submit_tag "Delete", class: " hidden button is-primary", style:"margin: 10px" %>
 
   <% end %>
     </div>
-  </div>
+  
       <% end %>
     <% end %>
  
