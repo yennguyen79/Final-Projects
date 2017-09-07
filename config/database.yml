@@ -82,4 +82,4 @@ production:
   <<: *default
   database: Yen-Restaurant_production
   username: Yen-Restaurant
-  password: <%= ENV['CODERDATING_DATABASE_PASSWORD'] %>
+  password: <%= ENV['Yen-Restaurant_DATABASE_PASSWORD'] %>

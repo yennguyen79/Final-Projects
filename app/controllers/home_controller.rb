@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    get_cart
+
   end
   
       

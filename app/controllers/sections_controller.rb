@@ -1,4 +1,5 @@
 class SectionsController < ApplicationController
+
   def index
     unless params[:section]
       redirect_to sections_path(section: Section.first.name)
@@ -12,20 +13,18 @@ class SectionsController < ApplicationController
 
     end
 
- 
+  # def set_cart
+  #   cart = Cart.create
+  #   session[:cart_id] = @cart.id
   
-  def set_cart
-    cart = Cart.create
-    session[:cart_id] = @cart.id
-  
-  end
+  # end
 
-  def get_cart 
-    if session[:cart_id]
-      @cart = Cart.find session[:cart_id]
-    else 
-      set_cart
-    end
-    end
+  # def get_cart 
+  #   if session[:cart_id]
+  #     @cart = Cart.find session[:cart_id]
+  #   else 
+  #     set_cart
+  #   end
+    # end
   
 end  
