@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
-def add
-   cart = get_cart
+  def add
+     
+    cart = get_cart
     line_item = cart.line_items.build line_item_params
     if cart.save
       flash[:success] = "You added"
@@ -9,12 +10,13 @@ def add
     end 
     redirect_back(fallback_location: sections_path)
   end 
-
+ 
   def show
-    
+     
   end
   
   def line_item_params
     params.require(:line_item).permit(:food_item_id, :quantity)
   end 
 end
+

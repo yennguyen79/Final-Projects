@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  get 'carts/add'
+
+  get 'users/new'
+
   get 'about/index'
 
   resources :line_items, only: [:delete]
   
   resources :sections
+  resources :users
     
 
   resources :food_items

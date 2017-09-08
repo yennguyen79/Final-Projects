@@ -4,7 +4,7 @@ class LineItem < ApplicationRecord
   validates :quantity,
     presence: true,
     numericality: {
-      greate_than: 0, only_integer: true 
+      greate_than: 0, less_than:  10, only_integer: true 
 
     }
     def name 

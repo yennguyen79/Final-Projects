@@ -1,4 +1,4 @@
-<div class="tabs is-large">
+<div class="tabs is-centered is-boxed is-large">
   <ul>
     <% @sections.each do |section| %>
       <li class="<%= 'is-active' if params[:section] == section.name %>"> 
@@ -40,8 +40,8 @@
             </div>
           </div>
         <% end %>
+       <% end %>
       </div>
-    <% end %>
     <% end %>
  </div>
  </div>
