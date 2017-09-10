@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :posts
+
   get 'carts/add'
 
   get 'users/new'
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
   resources :sections
   resources :users
     
-
+  resources :carts, only: [:show]
   resources :food_items
 
   get "contact_us" => "home#contact_us"

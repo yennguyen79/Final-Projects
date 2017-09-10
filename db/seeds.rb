@@ -20,6 +20,6 @@ sections = Section.all
   FoodItem.create(
     name: Faker::Food.dish,
     section: sections.sample,
-    price: rand(10..200) * 10 # price is between 10,000 VND and 200,000 VND
+    price: rand(10..200) * 10000 # price is between 10,000 VND and 200,000 VND
   )
 end

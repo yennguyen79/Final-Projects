@@ -14,7 +14,8 @@ class CartsController < ApplicationController
   def show
      
   end
-  
+
+  private
   def line_item_params
     params.require(:line_item).permit(:food_item_id, :quantity)
   end 
